@@ -118,7 +118,7 @@ Parameter `country` can be found within the url of `Arcteryx` website.
 
 > We use RSSHub to implement the searching of Craigslist
 > An example of a full original search url:
-> <https://sfbay.craigslist.org/search/sso?query=folding+bike&sort=rel>
+> [https://sfbay.craigslist.org/search/sso?query=folding+bike&sort=rel](https://sfbay.craigslist.org/search/sso?query=folding+bike&sort=rel)
 >
 > the `xxx` in `/search/xxx` is the search type, just refer to the original search url.
 > The query string is the actual name of query, in this case is folding bike
@@ -199,7 +199,7 @@ Transform any search into a feed.
 
 <Route author="Platane" example="/leboncoin/ad/category=10&locations=Paris_75015" path="/leboncoin/ad/:query" paramsDesc={['search page querystring']}>
 
-For instance, in <https://www.leboncoin.fr/recherche/?category=10&locations=Paris_75015>, the query is **category=10&locations=Paris_75015**
+For instance, in `https://www.leboncoin.fr/recherche/?category=10&locations=Paris_75015`, the query is **category=10&locations=Paris_75015**
 
 </Route>
 
@@ -268,6 +268,15 @@ Language
 
 </Route>
 
+## MyMusicSheet {#mymusicsheet}
+
+### User Sheets {#mymusicsheet-user-sheets}
+
+
+<Route author="Freddd13" example="/mymusicsheet/user/sheets/HalcyonMusic/USD/1" path="/mymusicsheet/user/sheets/:username/:iso?/:freeOnly?" paramsDesc={['用户名，可在URL中找到', '用于显示价格的ISO 4217货币代码, 支持常见代码, 默认为人民币, 即`CNY`', '只返回免费谱, 任意值为开启']} radar="1" rssbud="1"/>
+
+关于ISO 4217，请参考[维基百科](https://zh.wikipedia.org/zh-cn/ISO_4217#%E7%8E%B0%E8%A1%8C%E4%BB%A3%E7%A0%81)
+
 ## Patagonia {#patagonia}
 
 ### New Arrivals {#patagonia-new-arrivals}
@@ -310,7 +319,7 @@ Language
 
 <Route author="NavePnow" example="/zagg/new-arrivals/brand=164&cat=3038,3041" path="/zagg/new-arrivals/:query?" paramsDesc={['query, search page querystring']}/>
 
-For instance, in <https://www.zagg.com/en_us/new-arrivals?brand=164&cat=3038%2C3041>, the query is `brand=164&cat=3038%2C3041`
+For instance, in `https://www.zagg.com/en_us/new-arrivals?brand=164&cat=3038%2C3041`, the query is `brand=164&cat=3038%2C3041`
 
 ## 大麦网 {#da-mai-wang}
 
@@ -362,7 +371,7 @@ For instance, in <https://www.zagg.com/en_us/new-arrivals?brand=164&cat=3038%2C3
 
 :::tip
 
-如商品 <https://item.jd.com/526835.html> 中的 id 为 `526835`，所以路由为 [`/jd/price/526835`](https://rsshub.app/jd/price/526835)
+如商品 `https://item.jd.com/526835.html` 中的 id 为 `526835`，所以路由为 [`/jd/price/526835`](https://rsshub.app/jd/price/526835)
 
 :::
 
@@ -450,7 +459,7 @@ For instance, in <https://www.zagg.com/en_us/new-arrivals?brand=164&cat=3038%2C3
 
 :::tip
 
-网站也提供了部分 RSS: <https://www.smzdm.com/dingyue>
+网站也提供了部分 RSS: [https://www.smzdm.com/dingyue](https://www.smzdm.com/dingyue)
 
 :::
 
@@ -553,6 +562,92 @@ For instance, in <https://www.zagg.com/en_us/new-arrivals?brand=164&cat=3038%2C3
 ### 价格 {#te-si-la-zhong-guo-jia-ge}
 
 <Route author="xiaokyo" example="/tesla/price" path="/tesla/price" radar="1"/>
+
+### 权益中心 {#te-si-la-zhong-guo-quan-yi-zhong-xin}
+
+<Route author="simonsmh nczitzk" example="/tesla/cx/生活方式/北京" path="/tesla/cx/:category?/:city?" paramsDesc={['分类，见下表，默认为空，即全部', '城市，默认为空，即全国']} radar="1" rssbud="1">
+
+| 充电免停 | 酒店 | 美食 | 生活方式 |
+| -------- | ---- | ---- | -------- |
+
+:::tip
+
+分类为 **充电免停** 时，城市参数不起作用
+
+:::
+
+<details>
+  <summary>可选城市</summary>
+
+  | 成都 | 深圳 | 洛阳 | 北京 | 南京 | 绍兴 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 西安 | 上海 | 阿坝藏族羌族自治州 | 重庆 | 郑州 | 天津 |
+  | ---- | ---- | ------------------ | ---- | ---- | ---- |
+
+  | 晋中 | 三亚 | 湖州 | 苏州 | 扬州 | 秦皇岛 |
+  | ---- | ---- | ---- | ---- | ---- | ------ |
+
+  | 长沙 | 武汉 | 安阳 | 温州 | 瑞安 | 石家庄 |
+  | ---- | ---- | ---- | ---- | ---- | ------ |
+
+  | 佛山 | 广州 | 杭州 | 烟台 | 沧州 | 张家港 |
+  | ---- | ---- | ---- | ---- | ---- | ------ |
+
+  | 金华 | 临沧 | 大理 | 南昌 | 贵阳 | 信阳 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 张家口 | 铜仁 | 沈阳 | 合肥 | 黔东 | 高邮 |
+  | ------ | ---- | ---- | ---- | ---- | ---- |
+
+  | 三河 | 安顺 | 莆田 | 阳江 | 南宁 | 台州 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 余姚 | 淄博 | 三明 | 中山 | 宁波 | 厦门 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 永康 | 慈溪 | 台山 | 福州 | 无锡 | 宜昌 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 泉州 | 肇庆 | 太仓 | 珠海 | 邢台 | 衡水 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 温岭 | 宜兴 | 东莞 | 威海 | 南通 | 舟山 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 都匀 | 长治 | 江阴 | 云浮 | 常州 | 唐山 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 平湖 | 商丘 | 保定 | 泰州 | 青岛 | 龙口 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 泰安 | 岳阳 | 惠州 | 徐州 | 哈尔滨 | 潍坊 |
+  | ---- | ---- | ---- | ---- | ------ | ---- |
+
+  | 大同 | 嘉兴 | 毕节 | 临汾 | 江门 | 诸暨 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 儋州 | 衢州 | 大连 | 昆山 | 靖江 | 常熟 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 罗定 | 丽江 | 晋江 | 乐清 | 茂名 | 福清 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 廊坊 | 兰溪 | 汕尾 | 滨州 | 昆明 | 玉环 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 绵阳 | 漳州 | 德州 | 聊城 | 龙岩 | 临沂 |
+  | ---- | ---- | ---- | ---- | ---- | ---- |
+
+  | 新沂 | 桐乡 | 迪庆藏族自治州 | 汕头 | 潮州 | 驻马店 |
+  | ---- | ---- | -------------- | ---- | ---- | ------ |
+
+  | 曲阜 | 郴州 | 济源 | 兴义 |
+  | ---- | ---- | ---- | ---- |
+
+</details>
+
+</Route>
 
 ## 玩物志 {#wan-wu-zhi}
 

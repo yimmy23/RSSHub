@@ -17,6 +17,24 @@
 
 <Route author="nwindz" example="/showroom/room/93401" path="/showroom/room/:id" paramsDesc={['直播间 id, 打开浏览器控制台，刷新页面，找到请求中的room_id参数']}/>
 
+## Twitch {#twitch}
+
+### Live {#twitch-live}
+
+<Route author="hoilc" path="/twitch/live/:login" example="/twitch/live/riotgames" paramsDesc={['Twitch username']} radar="1"/>
+
+### Channel Video {#twitch-channel-video}
+
+<Route author="hoilc" path="/video/:login/:filter?" example="/twitch/video/riotgames/highlights" paramsDesc={['Twitch username', 'Video type, Default to all']} radar="1"/>
+
+| archive | highlights | all     |
+| ---- | ---- | -------- |
+| Recent broadcasts | Recent highlights and uploads   | All videos |
+
+### Stream Schedule {#twitch-stream-schedule}
+
+<Route author="hoilc" path="/twitch/schedule/:login" example="/twitch/schedule/riotgames" paramsDesc={['Twitch username']} radar="1"/>
+
 ## V LIVE {#v-live}
 
 ### Board {#v-live-board}
@@ -57,7 +75,7 @@
 
 <Route author="Qixingchen" example="/bilibili/live/area/207/online" path="/bilibili/live/area/:areaID/:order" paramsDesc={['分区 ID 分区增删较多, 可通过 [分区列表](https://api.live.bilibili.com/room/v1/Area/getList) 查询', '排序方式, live_time 开播时间, online 人气']}>
 
-:::caution
+:::warning
 
 由于接口未提供开播时间，如果直播间未更换标题与分区，将视为一次。如果直播间更换分区与标题，将视为另一项
 

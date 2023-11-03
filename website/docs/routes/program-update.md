@@ -59,7 +59,19 @@ The parameters can be extracted from the Release page URL: `https://install.appc
 
 ### App Update {#app-store-mac-app-store-app-update}
 
-<Route author="EkkoG" example="/apple/apps/update/us/id1529445840" path="/apple/apps/update/:country/:id" paramsDesc={['App Store Country, obtain from the app URL `https://apps.apple.com/us/app/apple-store/id375380948`, in this case, `us`', 'App Store app id, obtain from the app URL `https://apps.apple.com/us/app/apple-store/id375380948`, in this case, `id375380948`']} radar="1"/>
+<Route author="EkkoG nczitzk" example="/apple/apps/update/us/id408709785" path="/apple/apps/update/:country/:id/:platform?" paramsDesc={['App Store Country, obtain from the app URL, see below', 'App id, obtain from the app URL', 'App Platform, see below, all by default']} radar="1" rssbud="1">
+
+| All | iOS | macOS | tvOS |
+| --- | --- | ----- | ---- |
+|     | iOS | macOS | tvOS |
+
+:::tip
+
+For example, the URL of [GarageBand](https://apps.apple.com/us/app/messages/id408709785) in the App Store is `https://apps.apple.com/us/app/messages/id408709785`. In this case, the `App Store Country` parameter for the route is `us`, and the `App id` parameter is `id1146560473`. So the route should be [`/apple/apps/update/us/id408709785`](https://rsshub.app/apple/apps/update/us/id408709785).
+
+:::
+
+</Route>
 
 ### Price Drop {#app-store-mac-app-store-price-drop}
 
@@ -193,7 +205,7 @@ Language
 
 ### Model discussions {#civitai-model-discussions}
 
-:::caution
+:::warning
 
 Need to configure `CIVITAI_COOKIE` to obtain image information of NSFW models.
 
@@ -245,9 +257,9 @@ For example: `https://www.curseforge.com/sc2/assets/taylor-mouses-stuff/files` t
 
 <Route author="HenryQW" example="/dockerhub/build/wangqiru/ttrss" path="/dockerhub/build/:owner/:image/:tag?" paramsDesc={['Image owner', 'Image name', 'Image tag，default to latest']}>
 
-:::caution
+:::warning
 
-The owner of the official image fills in the library, for example: <https://rsshub.app/dockerhub/build/library/mysql>
+The owner of the official image fills in the library, for example: [https://rsshub.app/dockerhub/build/library/mysql](https://rsshub.app/dockerhub/build/library/mysql)
 
 :::
 
@@ -257,9 +269,9 @@ The owner of the official image fills in the library, for example: <https://rssh
 
 <Route author="outloudvi" example="/dockerhub/tag/library/mariadb" path="/dockerhub/tag/:owner/:image/:limits?" paramsDesc={['Image owner', 'Image name', 'Tag count, 10 by default']}>
 
-:::caution
+:::warning
 
-Use `library` as the `owner` for official images, such as <https://rsshub.app/dockerhub/tag/library/mysql>
+Use `library` as the `owner` for official images, such as [https://rsshub.app/dockerhub/tag/library/mysql](https://rsshub.app/dockerhub/tag/library/mysql)
 
 :::
 
@@ -351,11 +363,11 @@ Language
 
 <Route author="NavePnow" example="/ifi-audio/download/1503007035/44472" path="/ifi-audio/download/:val/:id" paramsDesc={['product val', 'product id']}/>
 
-:::caution
+:::warning
 
-1.  Open <https://ifi-audio.com/download-hub> and the Network panel
+1.  Open [https://ifi-audio.com/download-hub](https://ifi-audio.com/download-hub) and the Network panel
 2.  Select the device and the corresponding serial number in the website and click Search
-3.  Find the last request named <https://ifi-audio.com/wp-admin/admin-ajax.php> in the Network panel, find out the val and id in the Payload panel, and fill in the url
+3.  Find the last request named `https://ifi-audio.com/wp-admin/admin-ajax.php` in the Network panel, find out the val and id in the Payload panel, and fill in the url
 
 :::
 
@@ -379,10 +391,10 @@ Language
 
 ## Logseq {#logseq}
 
-:::caution
+:::warning
 
 Logseq 开发团队已经放弃了 [旧网站](https://logseq.com/blog)。
-请使用 <https://github.com/logseq/logseq/releases.atom> 代替。
+请使用 `https://github.com/logseq/logseq/releases.atom` 代替。
 
 :::
 
